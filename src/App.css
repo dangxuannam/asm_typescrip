@@ -1,0 +1,97 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+li,a {
+  list-style: none;
+  text-decoration: none
+}
+
+.containerr{
+  width: 100%;
+}
+.header-top {
+  display: flex;
+  justify-content:space-around;
+  background-color: rgb(57, 57, 58);
+}
+.phone a{
+  color: yellow;
+}
+.cart{
+  color: rgb(216, 54, 0);
+}
+.navmenu{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(247, 247, 243);
+}
+.menu ul{
+  display: flex;
+  line-height: 100px ;
+}
+.menu a {
+  margin: 30px;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+.search{
+  padding-top: 30px;
+}
+.search input {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(231, 229, 229);
+  border: 1px solid white;
+}
+.search i{
+  color: #3e7bf7;
+  font-size: 20px;
+}
+
+
