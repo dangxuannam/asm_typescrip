@@ -5,7 +5,7 @@ import ShowInfo from './components/ShowInfo'
 import { list } from './api/product'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import HomePage from './page/HomePage'
-import ProductPage from './page/ProductPage'
+
 import Websitepage from './page/websitepage'
 
 
@@ -27,7 +27,7 @@ return (
 
    <Routes>
      <Route path='/' element={<Websitepage/>}/>
-     <Route path='/product' element={<ProductPage/>}/>
+
    </Routes>
 
   </div>

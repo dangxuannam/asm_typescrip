@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../components/banner'
 import Header from '../components/header'
+import ProductPage from '../components/ProductPage'
 type Props = {}
 
 const Websitepage = (props: Props) => {
@@ -8,6 +9,7 @@ const Websitepage = (props: Props) => {
     <div className='containerr'>
        <Header/>
        <Banner/>
+       <ProductPage/>
     </div>
   )
 }
