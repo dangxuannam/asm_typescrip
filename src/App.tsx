@@ -4,9 +4,10 @@ import './App.css'
 import ShowInfo from './components/ShowInfo'
 import { list } from './api/product'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import HomePage from './page/HomePage'
+
 
 import Websitepage from './page/websitepage'
+import AdminPage from './page/adminpage'
 
 
 function App() {
@@ -27,6 +28,7 @@ return (
 
    <Routes>
      <Route path='/' element={<Websitepage/>}/>
+     <Route path='dashboard' element={<AdminPage/>}/>
 
    </Routes>
 

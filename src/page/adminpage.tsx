@@ -1,9 +1,14 @@
 import React from 'react'
+import Dashboard from '../components/dashboard'
 
 type Props = {}
 
-const adminpage = (props: Props) => {
+const AdminPage = (props: Props) => {
   return (
-    <div>adminpage</div>
+    <div className='containerr'>
+      <Dashboard/>
+      
+    </div>
   )
 }
+export default AdminPage

@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {}
 
-const dashboard = (props: Props) => {
+const Dashboard = (props: Props) => {
   return (
    <div>
   <div className="btn">
@@ -36,4 +36,4 @@ const dashboard = (props: Props) => {
 
   )
 }
-export default dashboard
+export default Dashboard
