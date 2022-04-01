@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import ShowInfo from './components/ShowInfo'
 import { list } from './api/product'
 import { NavLink, Route, Routes } from 'react-router-dom'
 
 
-import Websitepage from './page/websitepage'
-import AdminPage from './page/adminpage'
+import Websitepage from './page/layout/websitepage'
+import AdminPage from './page/layout/adminpage'
+import { ProductType } from './types/product'
+import ProductManager from './page/productmannager'
 
 
 function App() {
-const [products, setProducts] = useState <{_id: Number, name: String}[]>([])
+const [products, setProducts] = useState <ProductType[]>([])
 
 useEffect(() => {
   const getProducts = async () => {
@@ -23,15 +24,21 @@ useEffect(() => {
 })
 return (
   <div className='App'>
- {products.map((item, index) => <div key={index}>{item.name}  </div>)}
+ {/* {products.map((item, index) => <div key={index}>{item.name}  </div>)} */}
  
+<Routes>
+   <Route path='/' element={<Websitepage/>}>  
+    
+   </Route>
 
-   <Routes>
-     <Route path='/' element={<Websitepage/>}/>
-     <Route path='dashboard' element={<AdminPage/>}/>
+<Route path='admin'element={<AdminPage/>}>
+ <Route path='products'>
+   
+   <Route index element={<ProductManager/>}/>
+ </Route>
+</Route>
 
-   </Routes>
-
+</Routes>
   </div>
 )
 }
