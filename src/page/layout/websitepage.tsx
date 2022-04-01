@@ -1,4 +1,5 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 import Banner from '../../components/banner'
 import dashboard from '../../components/dashboard'
 import Header from '../../components/header'
@@ -10,7 +11,7 @@ const Websitepage = (props: Props) => {
     <div className='containerr'>
        <Header/>
        <Banner/>
-       <ProductPage/>
+       <Outlet/>
       
     </div>
   )

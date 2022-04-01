@@ -239,7 +239,43 @@ nav ul li a span.rotate{
   font-size: 30px;
   font-weight: 500;
 }
-
+.table{
+  width: 1250px;
+  margin-left: 128px;
+}
+.b{
+  width: 40px;
+  background-color: blue;
+  border: 2px solid blue;
+  border-radius: 3px;
+  color: white;
+  margin-left: 5px;
+}
+form{
+  width: 800px;
+  margin-left: 300px;
+}
+label{
+  font-weight: bold;
+}
+.button{
+  margin-top: 10px;
+  background-color: #133c8e;
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(17, 17, 143);
+  width: 120px;
+  border-radius: 4px;
+}
+.button:hover{
+  background-color: #021845;
+}
+.h2{
+  margin-left: 130px;
+}
+.sp{
+  margin-left: 130px;
+}
 
 
 

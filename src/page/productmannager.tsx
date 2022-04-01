@@ -1,11 +1,21 @@
 import React from 'react'
+import { ProductType } from '../types/product'
+import {Link} from 'react-router-dom'
+type  ProductManagerProps = {
+  products: ProductType[];
+  onRemove: (id:number) => void
+}
 
-type Props = {}
-
-const ProductManager = (props: Props) => {
+const ProductManager = (props: ProductManagerProps) => {
   return (
-    <table className="table table-bordered">
-    <h2>DANH SÁCH SẢN PHẨM</h2>
+    <div>
+    <div className="table">
+    <h2 className='h2'>
+        DANH SÁCH SẢN PHẨM
+      </h2>
+      <a className='sp' href="/admin/products/add">Thêm mới sản phẩm</a>
+    <table className="table table-bordered">  
+    <thead>
     <tr>
       <th>STT</th>
       <th>Tên Sản Phẩm</th>
@@ -13,16 +23,27 @@ const ProductManager = (props: Props) => {
       <th>Giá Sản Phẩm</th>
       <th>Acticon</th>
     </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> <button className="btn btn-primary" data-id=""> xoa </button>
-        <a href="">sua</a>
+    </thead>
+  <tbody>
+   
+    {props.products.map((item,index) => {
+
+   
+    return <tr key={index}>
+      <td> {index + 1} </td>
+      <td>{item.name} </td>
+      <td>{item.img}</td>
+      <td>{item.price} </td>
+      
+      <td> <button className="b" onClick={()=> props.onRemove(item.id)}> xoa</button>
+      <Link to ={`/admin/products/${item.id}/edit`}>Sửa</Link>
       </td>
     </tr>
+     })}
+     </tbody>
   </table>
+  </div>
+  </div>
   )
 }
 export default ProductManager
