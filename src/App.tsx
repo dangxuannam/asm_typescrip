@@ -12,6 +12,8 @@ import ProductManager from './page/productmannager'
 import ProductAdd from './page/productadd'
 import ProductEdit from './page/productedit'
 import ProductPage from './components/ProductPage'
+import { signup } from './api/auth'
+
 
 
 function App() {
@@ -51,7 +53,7 @@ return (
 <Routes>
    <Route path='/' element={<Websitepage/>}>  
     <Route path='/'>
-      <Route index element={<ProductPage/>}/>
+      <Route index element={<ProductPage products={products}/>}/>
       
 
     </Route>
@@ -65,6 +67,7 @@ return (
    <Route path=':id/edit' element={<ProductEdit onUpdate={onHandleUpdate}/>}/>
  </Route>
 </Route>
+
 
 </Routes>
   </div>

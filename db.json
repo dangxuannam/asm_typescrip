@@ -1,34 +1,33 @@
 {
   "products": [
     {
-      "name": "Product A update",
-      "img": "https://picsum.photos/320/320",
-      "price": "123123121",
-      "id": 3
-    },
-    {
-      "name": "Product B update",
-      "img": "http://placeimg.com/640/480",
-      "price": "123123121",
-      "id": 3
-    },
-    {
-      "name": "Product C update",
-      "img": "https://picsum.photos/320/320",
-      "price": "123123121",
-      "id": 3
-    },
-    {
       "name": "đặng xuân nam",
       "img": "dep vai",
-      "price": "123456",
+      "price": "12345678",
       "id": 4
     },
     {
-      "name": "đặng xuân nam 222221",
-      "img": "12345",
-      "price": "2020200202",
-      "id": 5
+      "name": "Intelligent Plastic Car 12",
+      "img": "dep",
+      "price": "123456",
+      "id": 6
+    },
+    {
+      "name": "combo ga",
+      "img": "dep",
+      "price": "500000",
+      "id": 7
+    },
+    {
+      "name": "ga cong nghiep",
+      "img": "abcx",
+      "price": "8888888",
+      "id": 8
     }
-  ]
+  ],
+  "users":{
+    "name": "admin",
+    "password": "123456",
+    "email": "dxnam@gmail.com"
+  }
 }
