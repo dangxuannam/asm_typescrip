@@ -25,7 +25,7 @@
       "id": 8
     }
   ],
-  "users":{
+  "users": {
     "name": "admin",
     "password": "123456",
     "email": "dxnam@gmail.com"

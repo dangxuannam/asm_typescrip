@@ -13,8 +13,9 @@ import ProductAdd from './page/productadd'
 import ProductEdit from './page/productedit'
 import ProductPage from './components/ProductPage'
 import { signup } from './api/auth'
-
-
+import Signup from './components/signup'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.min.css"
 
 function App() {
 const [products, setProducts] = useState <ProductType[]>([])
@@ -68,9 +69,11 @@ return (
  </Route>
 </Route>
 
-
+<Route path='/signup' element={<Signup/>}/>
 </Routes>
+<ToastContainer/>
   </div>
+  
 )
 }
 
