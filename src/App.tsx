@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import { add, list, remove, update } from './api/product'
 import { NavLink, Route, Routes } from 'react-router-dom'
@@ -12,10 +11,12 @@ import ProductManager from './page/productmannager'
 import ProductAdd from './page/productadd'
 import ProductEdit from './page/productedit'
 import ProductPage from './components/ProductPage'
-import { signup } from './api/auth'
-import Signup from './components/signup'
-import { ToastContainer } from 'react-toastify'
+
+
+import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.min.css"
+import Signup from './components/Signup'
+import Signin from './components/signin'
 
 function App() {
 const [products, setProducts] = useState <ProductType[]>([])
@@ -32,7 +33,7 @@ useEffect(() => {
 const onHandleUpdate = async(product:ProductType) => {
 try {
   const {data} =await update(product)
-  setProducts(products.map(item => item.id === data.id ? product: item))
+  setProducts(products.map(item => item._id === data._id ? product: item))
 } catch (error) {
   
 }
@@ -43,10 +44,17 @@ const onHandleAdd = async (product: any) => {
   setProducts([...products, data])
 }
 
-const onHandleRemove = async (id: number) => {
-  remove(id)
-  setProducts(products.filter(item => item.id !== id))
+const onHandleRemove = async (id: string) => {
+ try {
+   const { data } = await remove(id)
+   if(data) {
+     toast.success("xoa thanh cong")
+   }
+ } catch (error: {}) {
+  toast.error(error.response.data)
+ }
 }
+
 return (
   <div className='App'>
  {/* {products.map((item, index) => <div key={index}>{item.name}  </div>)} */}
@@ -69,7 +77,8 @@ return (
  </Route>
 </Route>
 
-<Route path='/signup' element={<Signup/>}/>
+<Route path='/signup' element={< Signup />}/>
+<Route path='/signin' element={< Signin/>}/>
 </Routes>
 <ToastContainer/>
   </div>

@@ -1,15 +1,9 @@
 {
   "products": [
     {
-      "name": "đặng xuân nam",
-      "img": "dep vai",
-      "price": "12345678",
-      "id": 4
-    },
-    {
-      "name": "Intelligent Plastic Car 12",
-      "img": "dep",
-      "price": "123456",
+      "name": "Intelligent Plastic Car 134",
+      "img": "dep zai",
+      "price": "1234567",
       "id": 6
     },
     {
@@ -23,6 +17,24 @@
       "img": "abcx",
       "price": "8888888",
       "id": 8
+    },
+    {
+      "name": "Prd 2",
+      "img": "abcxyz",
+      "price": "200000",
+      "id": 9
+    },
+    {
+      "name": "prd 4",
+      "img": "http://sencodo/400/300",
+      "price": "6000000",
+      "id": 10
+    },
+    {
+      "name": "prd 10",
+      "img": "abcxxyyy",
+      "price": "200000",
+      "id": 11
     }
   ],
   "users": {

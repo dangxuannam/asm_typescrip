@@ -25,7 +25,7 @@ const ProductEdit = (props: ProductEditProps ) => {
             reset(data)
         }
         getProducts();
-    },[])
+    },[id])
     const onSubmit: SubmitHandler<FormInputs> = data => {
         props.onUpdate(data)
         navigate("/admin/products")

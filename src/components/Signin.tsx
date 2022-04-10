@@ -2,32 +2,30 @@ import React from 'react'
 import {SubmitHandler, useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
-import { signup } from '../api/auth'
+import { signin } from '../api/auth'
+
 type FormInputs = {
-name: string,
 email: string,
 password: number | string
 }
 
-const Signup = (props: FormInputs) => {
-    const{register, handleSubmit, formState: {errors}} = useForm<FormInputs>();
+const Signin = (props: FormInputs) => {
+    const {register, handleSubmit, formState: {errors}} = useForm<FormInputs>()
     const navigate = useNavigate()
-    const onsubmit: SubmitHandler<FormInputs> = async (user) => {
-        const {data} = await signup(user);
-        if(data) {
-toast.success("ban da dang ki thanh cong,cho 3s")
-setTimeout(() => {
-    navigate('/Signin')
-},3000)
-        }
+    const onSubmit: SubmitHandler<FormInputs> = async (user) => {
+    const {data} = await signin(user)
+    if(data) {
+        toast.success("ban da dang nhap thanh cong,cho 3s")
+        setTimeout(() => {
+            navigate('/')
+            localStorage.setItem("user",JSON.stringify(data))
+        },3000)
     }
+    }
+    
   return (
     <div>
-<form onSubmit={handleSubmit(onsubmit)}>
-            <div className="mb-3">
-                <label className="form-label">Name</label>
-                <input type="text" className="form-control" {...register('name')} />
-            </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-3">
                 <label className="form-label">Email</label>
                 <input type="email" className="form-control"  {...register('email')} />
@@ -36,11 +34,11 @@ setTimeout(() => {
                 <label className="form-label">Password</label>
                 <input type="password" className="form-control"  {...register('password')} />
             </div>
-            <button className="btn btn-primary">Đăng ký</button>
+            <button className="btn btn-primary">Đăng nhập</button>
         </form>
         <ToastContainer />
     </div>
   )
 }
 
-export default Signup
+export default Signin

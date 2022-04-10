@@ -2,8 +2,8 @@ import React from 'react'
 import { ProductType } from '../types/product'
 import {Link} from 'react-router-dom'
 type  ProductManagerProps = {
-  products: ProductType[];
-  onRemove: (id:number) => void
+  products: ProductType[],
+  onRemove: (id: number | string) => void 
 }
 
 const ProductManager = (props: ProductManagerProps) => {
@@ -35,8 +35,8 @@ const ProductManager = (props: ProductManagerProps) => {
       <td>{item.img}</td>
       <td>{item.price} </td>
       
-      <td> <button className="b" onClick={()=> props.onRemove(item.id)}> xoa</button>
-      <Link to ={`/admin/products/${item.id}/edit`}>Sửa</Link>
+      <td> <button className="b" onClick={()=> props.onRemove(item._id)}> xoa</button>
+      <Link to ={`/admin/products/${item._id}/edit`}>Sửa</Link>
       </td>
     </tr>
      })}
