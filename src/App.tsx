@@ -15,8 +15,7 @@ import ProductPage from './components/ProductPage'
 
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.min.css"
-import Signup from './components/Signup'
-import Signin from './components/Signin'
+
 import Banner from './components/banner'
 
 function App() {
@@ -46,14 +45,9 @@ const onHandleAdd = async (product: any) => {
 }
 
 const onHandleRemove = async (id: string) => {
- try {
-   const { data } = await remove(id)
-   if(data) {
-     toast.success("xoa thanh cong")
-   }
- } catch (error: {}) {
-  toast.error(error.response.data)
- }
+  remove(id);
+  // rerender
+  setProducts(products.filter(item => item._id !== id));
 }
 
 return (
@@ -73,7 +67,7 @@ return (
 <Route path='admin'element={<AdminPage/>}>
  <Route path='products'>
    
-   <Route index element={<ProductManager products={products} onRemove={onHandleRemove} />}/>
+   <Route index element={<ProductManager products={products} onRemovee={onHandleRemove} />}/>
    <Route path='add' element={< ProductAdd onAdd={onHandleAdd} />} />
    <Route path=':id/edit' element={<ProductEdit onUpdate={onHandleUpdate}/>}/>
  </Route>
