@@ -5,7 +5,7 @@ import { read } from '../api/product'
 import { ProductType } from '../types/product'
 
 type ProductEditProps = {
-    onUpdate:(product: ProductType) => void
+    onUpdate:(product: any) => void
 }
 type FormInputs = {
     name:string,

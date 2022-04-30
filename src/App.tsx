@@ -44,7 +44,7 @@ const onHandleAdd = async (product: any) => {
   setProducts([...products, data])
 }
 
-const onHandleRemove = async (id: string) => {
+const onHandleRemove = async (id: any) => {
   remove(id);
   // rerender
   setProducts(products.filter(item => item._id !== id));
