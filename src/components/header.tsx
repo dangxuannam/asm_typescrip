@@ -25,8 +25,8 @@ const Header = (props: Props) => {
     <div className="menu">
       <ul>
         <li><a href="">HOME</a></li>
-        <li><a href="">THỰC ĐƠN</a></li>
-        <li><a href="">KHUYẾN MÃI</a></li>
+        <li><a href="/admin">THỰC ĐƠN</a></li>
+        <li><a href="/admin/products">KHUYẾN MÃI</a></li>
         <li><a href="">CONTACT</a></li>
       </ul>
     </div>
