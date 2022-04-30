@@ -7,7 +7,7 @@ import { ProductType } from '../types/product'
 type ProductEditProps = {
     onUpdate:(product: ProductType) => void
 }
-type Inputs = {
+type FormInputs = {
     name:string,
     img:string,
     price: number

@@ -2,7 +2,7 @@ import React from 'react'
 import { ProductType } from '../types/product'
 import {Link} from 'react-router-dom'
 type  ProductManagerProps = {
-  products: ProductType[],
+  products: any[],
   onRemove: (id: number | string) => void 
 }
 

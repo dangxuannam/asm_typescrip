@@ -17,7 +17,7 @@ const Signup = (props: FormInputs) => {
         if(data) {
 toast.success("ban da dang ki thanh cong,cho 3s")
 setTimeout(() => {
-    navigate('/Signin')
+    navigate('/signin')
 },3000)
         }
     }

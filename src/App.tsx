@@ -16,7 +16,8 @@ import ProductPage from './components/ProductPage'
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.min.css"
 import Signup from './components/Signup'
-import Signin from './components/signin'
+import Signin from './components/Signin'
+import Banner from './components/banner'
 
 function App() {
 const [products, setProducts] = useState <ProductType[]>([])
@@ -61,6 +62,7 @@ return (
  
 <Routes>
    <Route path='/' element={<Websitepage/>}>  
+   <Route path='/banner' element={<Banner/>}/>
     <Route path='/'>
       <Route index element={<ProductPage products={products}/>}/>
       
@@ -77,8 +79,7 @@ return (
  </Route>
 </Route>
 
-<Route path='/signup' element={< Signup />}/>
-<Route path='/signin' element={< Signin/>}/>
+
 </Routes>
 <ToastContainer/>
   </div>
