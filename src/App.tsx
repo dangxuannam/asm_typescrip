@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { add, list, remove, update } from './api/product'
 import { NavLink, Route, Routes } from 'react-router-dom'
-
+import React from 'react';
 
 import Websitepage from './page/layout/websitepage'
 import AdminPage from './page/layout/adminpage'
@@ -20,6 +20,9 @@ import Banner from './components/banner'
 
 function App() {
 const [products, setProducts] = useState <ProductType[]>([])
+
+
+
 
 useEffect(() => {
   const getProducts = async () => {
@@ -39,7 +42,7 @@ try {
 }
 } 
 
-const onHandleAdd = async (product: any) => {
+const onHandleAdd = async (product: ProductType) => { 
   const{data} = await add(product)
   setProducts([...products, data])
 }
@@ -68,7 +71,7 @@ return (
  <Route path='products'>
    
    <Route index element={<ProductManager products={products} onRemovee={onHandleRemove} />}/>
-   <Route path='add' element={< ProductAdd onAdd={onHandleAdd} />} />
+   <Route path='add' element={< ProductAdd onAdd ={onHandleAdd} />} />
    <Route path=':id/edit' element={<ProductEdit onUpdate={onHandleUpdate}/>}/>
  </Route>
 </Route>

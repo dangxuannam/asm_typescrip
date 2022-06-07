@@ -32,7 +32,7 @@ const ProductManager = (props: ProductManagerProps) => {
     return <tr key={index}>
       <td> {index + 1} </td>
       <td>{item.name} </td>
-      <td>{item.img}</td>
+      <td> <img src={item.img} alt="" /></td>
       <td>{item.price} </td>
       
       <td> <button className="b" onClick={()=> props.onRemovee(item._id)}> xoa</button>

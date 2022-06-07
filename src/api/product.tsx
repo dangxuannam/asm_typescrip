@@ -5,16 +5,16 @@ export const list = () => {
     const url = `/products`;
     return instance.get(url)
 }
-export const remove = (id: string) => {
-    const url = `/products/${id}`;
+export const remove = (_id: string) => {
+    const url = `/products/${_id}`;
     return instance.delete(url)
 }
-export const add = (product: ProductType) => {
+export const add = (product: any) => {
     const url = `/products`
     return instance.post(url,product)
 }
-export const read = (id: any) => {
-    const url = `/products/${id}`;
+export const read = (_id: any) => {
+    const url = `/products/${_id}`;
     return instance.get(url)
 }
 export const update = (product: ProductType) => {

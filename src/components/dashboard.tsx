@@ -27,10 +27,7 @@ const Dashboard = (props: Props) => {
       <li><a href="#">log out</a></li>
     </ul>
   </nav>
-  <div className="content">
-    <div className="header">
-    </div>
-  </div>
+
 </div>
 
 
